@@ -36,53 +36,6 @@ TextBoxTextAndCoordTable:
 	text_box_text JP_AH_MENU_TEMPLATE,                7,  6, 11, 10, JapaneseAhText,           8,  8
 	text_box_text JP_POKEDEX_MENU_TEMPLATE,          11,  8, 19, 17, JapanesePokedexMenu,     12, 10
 
-BuySellQuitText:
-	db   "BUY"
-	next "SELL"
-	next "QUIT@"
-
-	db "@" ; unused
-
-UseTossText:
-	db   "USE"
-	next "TOSS@"
-
-JapaneseSaveMessageText:
-	db   "きろく"
-	next "メッセージ@"
-
-JapaneseSpeedOptionsText:
-	db   "はやい"
-	next "おそい@"
-
-MoneyText:
-	db "MONEY@"
-
-JapaneseMochimonoText:
-	db "もちもの@"
-
-JapaneseMainMenuText:
-	db   "つづきから"
-	next "さいしょから@"
-
-BattleMenuText:
-	db   "FIGHT <PK><MN>"
-	next "ITEM  RUN@"
-
-SafariZoneBattleMenuText:
-	db   "BALL×       BAIT"
-	next "THROW ROCK  RUN@"
-
-SwitchStatsCancelText:
-	db   "SWITCH"
-	next "STATS"
-	next "CANCEL@"
-
-JapaneseAhText:
-	db "アッ！@"
-
-JapanesePokedexMenu:
-	db   "データをみる"
-	next "なきごえ"
-	next "ぶんぷをみる"
-	next "キャンセル@"
+IF DEF(_ENGLISH)
+INCLUDE "data/text/english/text_boxes.asm"
+ENDC
