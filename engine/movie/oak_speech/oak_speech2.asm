@@ -215,7 +215,9 @@ GetDefaultName:
 	ld bc, NAME_BUFFER_LENGTH
 	jp CopyData
 
-INCLUDE "data/player_names_list.asm"
+IF DEF(_ENGLISH)
+INCLUDE "data/text/english/player_list.asm"
+ENDC
 
 LinkMenuEmptyText:
 	text_end
