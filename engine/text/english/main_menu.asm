@@ -340,9 +340,19 @@ SpecialEnterMap::
 	ret nz
 	jp EnterMap
 
-IF DEF(_ENGLISH)
-INCLUDE "engine/text/english/main_menu.asm"
-ENDC
+ContinueText:
+	db "CONTINUE"
+	next ""
+	; fallthrough
+
+NewGameText:
+	db   "NEW GAME"
+	next "OPTION@"
+
+CableClubOptionsText:
+	db   "TRADE CENTER"
+	next "COLOSSEUM"
+	next "CANCEL@"
 
 DisplayContinueGameInfo:
 	xor a
