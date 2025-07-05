@@ -424,11 +424,9 @@ PrintPlayTime:
 	lb bc, LEADING_ZEROES | 1, 2
 	jp PrintNumber
 
-SaveScreenInfoText:
-	db   "PLAYER"
-	next "BADGES    "
-	next "#DEX    "
-	next "TIME@"
+IF DEF(_ENGLISH)
+INCLUDE "engine/text/english/SaveScreenInfo.asm"
+ENDC
 
 DisplayOptionMenu:
 	hlcoord 0, 0
