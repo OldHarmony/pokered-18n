@@ -9,3 +9,8 @@ FieldMoveNames:
 	db "DIG@"
 	db "TELEPORT@"
 	db "SOFTBOILED@"
+
+PokemonMenuEntries:
+	db   "STATS"
+	next "SWITCH"
+	next "CANCEL@"

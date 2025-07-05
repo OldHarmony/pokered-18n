@@ -503,11 +503,6 @@ IF DEF(_ENGLISH)
 INCLUDE "data/text/english/field_move.asm"
 ENDC
 
-PokemonMenuEntries:
-	db   "STATS"
-	next "SWITCH"
-	next "CANCEL@"
-
 GetMonFieldMoves:
 	ld a, [wWhichPokemon]
 	ld hl, wPartyMon1Moves
