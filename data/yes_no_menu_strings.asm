@@ -17,30 +17,6 @@ TwoOptionMenuStrings:
 	two_option_menu 4, 3, FALSE, .NoYesMenu
 	assert_table_length NUM_TWO_OPTION_MENUS
 
-.NoYesMenu:
-	db   "NO"
-	next "YES@"
-
-.YesNoMenu:
-	db   "YES"
-	next "NO@"
-
-.NorthWestMenu:
-	db   "NORTH"
-	next "WEST@"
-
-.SouthEastMenu:
-	db   "SOUTH"
-	next "EAST@"
-
-.NorthEastMenu:
-	db   "NORTH"
-	next "EAST@"
-
-.TradeCancelMenu:
-	db   "TRADE"
-	next "CANCEL@"
-
-.HealCancelMenu:
-	db   "HEAL"
-	next "CANCEL@"
+IF DEF(_ENGLISH)
+INCLUDE "data/text/english/yes_no_menu_strings.asm"
+ENDC
