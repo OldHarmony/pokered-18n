@@ -1,9 +1,13 @@
 roms := \
 	pokered.gbc \
+	pokered_de.gbc \
 	pokeblue.gbc \
+	pokeblue_de.gbc \
 	pokeblue_debug.gbc
 patches := \
 	pokered.patch \
+	pokered_de.patch \
+	pokeblue_de.patch \
 	pokeblue.patch
 
 rom_obj := \
@@ -18,10 +22,14 @@ rom_obj := \
 	gfx/tilesets.o
 
 pokered_obj        := $(rom_obj:.o=_red.o)
+pokered_de_obj     := $(rom_obj:.o=_red_de.o)
 pokeblue_obj       := $(rom_obj:.o=_blue.o)
+pokeblue_de_obj    := $(rom_obj:.o=_blue_de.o)
 pokeblue_debug_obj := $(rom_obj:.o=_blue_debug.o)
 pokered_vc_obj     := $(rom_obj:.o=_red_vc.o)
+pokered_de_vc_obj  := $(rom_obj:.o=_red_de_vc.o)
 pokeblue_vc_obj    := $(rom_obj:.o=_blue_vc.o)
+pokeblue_de_vc_obj := $(rom_obj:.o=_blue_de_vc.o)
 
 
 ### Build tools
@@ -49,10 +57,14 @@ RGBLINK ?= $(RGBDS)rgblink
 
 all: $(roms)
 red:        pokered.gbc
+red_de:     pokered_de.gbc
 blue:       pokeblue.gbc
+blue_de:    pokeblue_de.gbc
 blue_debug: pokeblue_debug.gbc
 red_vc:     pokered.patch
+red_de_vc:  pokered_de.patch
 blue_vc:    pokeblue.patch
+blue_de_vc: pokeblue_de.patch
 
 clean: tidy
 	find gfx \
@@ -71,9 +83,13 @@ tidy:
 	      $(patches:.patch=_vc.map) \
 	      $(patches:%.patch=vc/%.constants.sym) \
 	      $(pokered_obj) \
+	      $(pokered_de_obj) \
 	      $(pokeblue_obj) \
+	      $(pokeblue_de_obj) \
 	      $(pokered_vc_obj) \
+	      $(pokered_de_vc_obj) \
 	      $(pokeblue_vc_obj) \
+	      $(pokeblue_de_vc_obj) \
 	      $(pokeblue_debug_obj) \
 	      rgbdscheck.o
 	$(MAKE) clean -C tools/
@@ -91,11 +107,15 @@ ifeq ($(DEBUG),1)
 RGBASMFLAGS += -E
 endif
 
-$(pokered_obj):        RGBASMFLAGS += -D _RED
-$(pokeblue_obj):       RGBASMFLAGS += -D _BLUE
-$(pokeblue_debug_obj): RGBASMFLAGS += -D _BLUE -D _DEBUG
-$(pokered_vc_obj):     RGBASMFLAGS += -D _RED -D _RED_VC
-$(pokeblue_vc_obj):    RGBASMFLAGS += -D _BLUE -D _BLUE_VC
+$(pokered_obj):        RGBASMFLAGS += -D _RED -D _ENGLISH
+$(pokered_de_obj):     RGBASMFLAGS += -D _RED -D _GERMAN
+$(pokeblue_obj):       RGBASMFLAGS += -D _BLUE -D _ENGLISH
+$(pokeblue_de_obj):    RGBASMFLAGS += -D _BLUE -D _GERMAN
+$(pokeblue_debug_obj): RGBASMFLAGS += -D _BLUE -D _DEBUG -D _ENGLISH
+$(pokered_vc_obj):     RGBASMFLAGS += -D _RED -D _RED_VC -D _ENGLISH
+$(pokered_de_vc_obj):  RGBASMFLAGS += -D _RED -D _RED_VC -D _GERMAN
+$(pokeblue_vc_obj):    RGBASMFLAGS += -D _BLUE -D _BLUE_VC -D _ENGLISH
+$(pokeblue_de_vc_obj): RGBASMFLAGS += -D _BLUE -D _BLUE_VC -D _GERMAN
 
 %.patch: %_vc.gbc %.gbc vc/%.patch.template
 	tools/make_patch $*_vc.sym $^ $@
@@ -120,10 +140,14 @@ endef
 
 # Dependencies for objects (drop _red and _blue from asm file basenames)
 $(foreach obj, $(pokered_obj), $(eval $(call DEP,$(obj),$(obj:_red.o=.asm))))
+$(foreach obj, $(pokered_de_obj), $(eval $(call DEP,$(obj),$(obj:_red_de.o=.asm))))
 $(foreach obj, $(pokeblue_obj), $(eval $(call DEP,$(obj),$(obj:_blue.o=.asm))))
+$(foreach obj, $(pokeblue_de_obj), $(eval $(call DEP,$(obj),$(obj:_blue_de.o=.asm))))
 $(foreach obj, $(pokeblue_debug_obj), $(eval $(call DEP,$(obj),$(obj:_blue_debug.o=.asm))))
 $(foreach obj, $(pokered_vc_obj), $(eval $(call DEP,$(obj),$(obj:_red_vc.o=.asm))))
+$(foreach obj, $(pokered_de_vc_obj), $(eval $(call DEP,$(obj),$(obj:_red_de_vc.o=.asm))))
 $(foreach obj, $(pokeblue_vc_obj), $(eval $(call DEP,$(obj),$(obj:_blue_vc.o=.asm))))
+$(foreach obj, $(pokeblue_de_vc_obj), $(eval $(call DEP,$(obj),$(obj:_blue_de_vc.o=.asm))))
 
 endif
 
@@ -132,16 +156,24 @@ endif
 
 
 pokered_pad        = 0x00
+pokered_de_pad     = 0x00
 pokeblue_pad       = 0x00
+pokeblue_de_pad    = 0x00
 pokered_vc_pad     = 0x00
+pokered_de_vc_pad  = 0x00
 pokeblue_vc_pad    = 0x00
+pokeblue_de_vc_pad = 0x00
 pokeblue_debug_pad = 0xff
 
 pokered_opt        = -jsv -n 0 -k 01 -l 0x33 -m MBC3+RAM+BATTERY -r 03 -t "POKEMON RED"
+pokered_de_opt     = -jsv -n 0 -k 01 -l 0x33 -m MBC5+RAM+BATTERY -r 03 -t "POKEMON RED"
 pokeblue_opt       = -jsv -n 0 -k 01 -l 0x33 -m MBC3+RAM+BATTERY -r 03 -t "POKEMON BLUE"
+pokeblue_de_opt    = -jsv -n 0 -k 01 -l 0x33 -m MBC5+RAM+BATTERY -r 03 -t "POKEMON BLUE"
 pokeblue_debug_opt = -jsv -n 0 -k 01 -l 0x33 -m MBC3+RAM+BATTERY -r 03 -t "POKEMON BLUE"
 pokered_vc_opt     = -jsv -n 0 -k 01 -l 0x33 -m MBC3+RAM+BATTERY -r 03 -t "POKEMON RED"
+pokered_de_vc_opt  = -jsv -n 0 -k 01 -l 0x33 -m MBC5+RAM+BATTERY -r 03 -t "POKEMON RED"
 pokeblue_vc_opt    = -jsv -n 0 -k 01 -l 0x33 -m MBC3+RAM+BATTERY -r 03 -t "POKEMON BLUE"
+pokeblue_de_vc_opt = -jsv -n 0 -k 01 -l 0x33 -m MBC5+RAM+BATTERY -r 03 -t "POKEMON BLUE"
 
 %.gbc: $$(%_obj) layout.link
 	$(RGBLINK) -p $($*_pad) -d -m $*.map -n $*.sym -l layout.link -o $@ $(filter %.o,$^)
