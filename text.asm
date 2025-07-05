@@ -282,7 +282,9 @@ ENDC
 
 SECTION "Pokédex Text", ROMX
 
-INCLUDE "data/pokemon/dex_text.asm"
+IF DEF(_ENGLISH)
+INCLUDE "data/text/english/pokedex_text.asm"
+ENDC
 
 
 SECTION "Move Names", ROMX
