@@ -583,20 +583,9 @@ DisplayOptionMenu:
 	ld [wOptionsTextSpeedCursorX], a ; text speed cursor X coordinate
 	jp .eraseOldMenuCursor
 
-TextSpeedOptionText:
-	db   "TEXT SPEED"
-	next " FAST  MEDIUM SLOW@"
-
-BattleAnimationOptionText:
-	db   "BATTLE ANIMATION"
-	next " ON       OFF@"
-
-BattleStyleOptionText:
-	db   "BATTLE STYLE"
-	next " SHIFT    SET@"
-
-OptionMenuCancelText:
-	db "CANCEL@"
+IF DEF(_ENGLISH)
+INCLUDE "engine/text/english/options_menu.asm"
+ENDC
 
 ; sets the options variable according to the current placement of the menu cursors in the options menu
 SetOptionsFromCursorPositions:
