@@ -187,7 +187,9 @@ DisplayIntroNameTextBox:
 .namestring
 	db "NAME@"
 
-INCLUDE "data/player_names.asm"
+IF DEF(_ENGLISH)
+INCLUDE "data/text/english/player.asm"
+ENDC
 
 GetDefaultName:
 ; a = name index

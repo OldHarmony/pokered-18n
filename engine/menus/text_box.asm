@@ -499,7 +499,9 @@ DisplayFieldMoveMonMenu:
 	ld de, PokemonMenuEntries
 	jp PlaceString
 
-INCLUDE "data/moves/field_move_names.asm"
+IF DEF(_ENGLISH)
+INCLUDE "data/text/english/field_move.asm"
+ENDC
 
 PokemonMenuEntries:
 	db   "STATS"

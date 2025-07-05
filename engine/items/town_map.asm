@@ -588,7 +588,9 @@ LoadTownMapEntry:
 
 INCLUDE "data/maps/town_map_entries.asm"
 
-INCLUDE "data/maps/names.asm"
+IF DEF(_ENGLISH)
+INCLUDE "data/text/english/maps.asm"
+ENDC
 
 MonNestIcon:
 	INCBIN "gfx/town_map/mon_nest_icon.1bpp"

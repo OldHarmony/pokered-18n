@@ -757,7 +757,9 @@ PrintStatText:
 	ld bc, $a
 	jp CopyData
 
-INCLUDE "data/battle/stat_mod_names.asm"
+IF DEF(_ENGLISH)
+INCLUDE "data/text/english/battle_stat_mod.asm"
+ENDC
 
 INCLUDE "data/battle/stat_modifiers.asm"
 

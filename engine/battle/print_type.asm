@@ -49,4 +49,6 @@ PrintType_:
 	pop hl
 	jp PlaceString
 
-INCLUDE "data/types/names.asm"
+IF DEF(_ENGLISH)
+INCLUDE "data/text/english/types.asm"
+ENDC
