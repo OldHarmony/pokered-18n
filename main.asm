@@ -311,7 +311,9 @@ INCLUDE "engine/events/hidden_objects/pokecenter_pc.asm"
 SECTION "Battle Engine 11", ROMX
 
 INCLUDE "engine/battle/decrement_pp.asm"
-INCLUDE "gfx/version.asm"
+IF DEF(_ENGLISH)
+INCLUDE "gfx/versions/english.asm"
+ENDC
 
 
 SECTION "bank1C", ROMX
