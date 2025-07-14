@@ -1,6 +1,5 @@
 SECTION "Text 1", ROMX
 
-IF DEF(_ENGLISH)
 INCLUDE "data/text/english/text_1.asm"
 
 INCLUDE "text/english/ViridianForest.asm"
@@ -26,11 +25,9 @@ INCLUDE "text/english/SilphCo2F.asm"
 INCLUDE "text/english/SilphCo3F.asm"
 INCLUDE "text/english/SilphCo4F.asm"
 INCLUDE "text/english/SilphCo5F.asm"
-ENDC
 
 SECTION "Text 2", ROMX
 
-IF DEF(_ENGLISH)
 INCLUDE "text/english/SilphCo5F_2.asm"
 INCLUDE "text/english/SilphCo6F.asm"
 INCLUDE "text/english/SilphCo7F.asm"
@@ -59,12 +56,10 @@ INCLUDE "text/english/LoreleisRoom.asm"
 INCLUDE "text/english/BrunosRoom.asm"
 INCLUDE "text/english/AgathasRoom.asm"
 INCLUDE "text/english/RockTunnelB1F.asm"
-ENDC
 
 
 SECTION "Text 3", ROMX
 
-IF DEF(_ENGLISH)
 INCLUDE "text/english/RockTunnelB1F_2.asm"
 INCLUDE "text/english/SeafoamIslandsB4F.asm"
 
@@ -78,11 +73,9 @@ INCLUDE "text/english/ViridianForestSouthGate.asm"
 INCLUDE "text/english/MtMoonPokecenter.asm"
 INCLUDE "text/english/SaffronGates.asm"
 INCLUDE "text/english/Daycare.asm"
-ENDC
 
 SECTION "Text 4", ROMX
 
-IF DEF(_ENGLISH)
 INCLUDE "text/english/Daycare_2.asm"
 INCLUDE "text/english/UndergroundPathRoute6.asm"
 INCLUDE "text/english/UndergroundPathRoute7.asm"
@@ -118,11 +111,9 @@ INCLUDE "text/english/Route8.asm"
 INCLUDE "text/english/Route9.asm"
 INCLUDE "text/english/Route10.asm"
 INCLUDE "text/english/Route11.asm"
-ENDC
 
 SECTION "Text 5", ROMX
 
-IF DEF(_ENGLISH)
 INCLUDE "text/english/Route11_2.asm"
 INCLUDE "text/english/Route12.asm"
 INCLUDE "text/english/Route13.asm"
@@ -137,11 +128,9 @@ INCLUDE "text/english/Route21.asm"
 INCLUDE "text/english/Route22.asm"
 INCLUDE "text/english/Route23.asm"
 INCLUDE "text/english/Route24.asm"
-ENDC
 
 SECTION "Text 6", ROMX
 
-IF DEF(_ENGLISH)
 INCLUDE "text/english/Route24_2.asm"
 INCLUDE "text/english/Route25.asm"
 
@@ -159,11 +148,9 @@ INCLUDE "text/english/ViridianGym.asm"
 INCLUDE "text/english/Museum1F.asm"
 INCLUDE "text/english/Museum2F.asm"
 INCLUDE "text/english/PewterGym.asm"
-ENDC
 
 SECTION "Text 7", ROMX
 
-IF DEF(_ENGLISH)
 INCLUDE "text/english/PewterGym_2.asm"
 INCLUDE "text/english/PewterNidoranHouse.asm"
 INCLUDE "text/english/PewterMart.asm"
@@ -192,11 +179,9 @@ INCLUDE "text/english/VermilionPokecenter.asm"
 INCLUDE "text/english/PokemonFanClub.asm"
 INCLUDE "text/english/VermilionMart.asm"
 INCLUDE "text/english/VermilionGym.asm"
-ENDC
 
 SECTION "Text 8", ROMX
 
-IF DEF(_ENGLISH)
 INCLUDE "text/english/VermilionGym_2.asm"
 INCLUDE "text/english/VermilionPidgeyHouse.asm"
 INCLUDE "text/english/VermilionDock.asm"
@@ -225,11 +210,9 @@ INCLUDE "text/english/FuchsiaPokecenter.asm"
 INCLUDE "text/english/WardensHouse.asm"
 INCLUDE "text/english/SafariZoneGate.asm"
 INCLUDE "text/english/FuchsiaGym.asm"
-ENDC
 
 SECTION "Text 9", ROMX
 
-IF DEF(_ENGLISH)
 INCLUDE "text/english/FuchsiaGym_2.asm"
 INCLUDE "text/english/FuchsiaMeetingRoom.asm"
 INCLUDE "text/english/FuchsiaGoodRodHouse.asm"
@@ -253,11 +236,9 @@ INCLUDE "text/english/SaffronPokecenter.asm"
 INCLUDE "text/english/MrPsychicsHouse.asm"
 
 INCLUDE "data/text/english/text_4.asm"
-ENDC
 
 SECTION "Text 10", ROMX
 
-IF DEF(_ENGLISH)
 INCLUDE "data/text/english/text_5.asm"
 
 INCLUDE "text/english/PalletTown.asm"
@@ -272,23 +253,16 @@ INCLUDE "text/english/CinnabarIsland.asm"
 INCLUDE "text/english/SaffronCity.asm"
 
 INCLUDE "data/text/english/text_6.asm"
-ENDC
 
 SECTION "Text 11", ROMX
 
-IF DEF(_ENGLISH)
 INCLUDE "data/text/english/text_7.asm"
-ENDC
 
 SECTION "Pokédex Text", ROMX
 
-IF DEF(_ENGLISH)
 INCLUDE "data/text/english/pokedex_text.asm"
-ENDC
 
 
 SECTION "Move Names", ROMX
 
-IF DEF(_ENGLISH)
 INCLUDE "data/text/english/moves.asm"
-ENDC
