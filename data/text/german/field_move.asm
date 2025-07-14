@@ -9,3 +9,8 @@ FieldMoveNames:
 	db "SCHAUFLER@"
 	db "TELEPORT@"
 	db "WEICHEI@"
+
+PokemonMenuEntries:
+	db   "STATUS"
+	next "TAUSCH"
+	next "ZURÜCK@"
