@@ -49,22 +49,30 @@ CreditsTextPointers:
 	dw CredSaOota
 	dw CredYoshikawa
 	dw CredToOota
+IF DEF(_ENGLISH)
 	dw CredUSStaff
 	dw CredUSCoord
 	dw CredTilden
+ENDC
 	dw CredKawakami
+IF DEF(_ENGLISH)
 	dw CredHiNakamura
 	dw CredGiese
 	dw CredOsborne
+ENDC
 	dw CredTrans
+IF DEF(_ENGLISH)
 	dw CredOgasawara
 	dw CredIwata
+ENDC
 	dw CredIzushi
 	dw CredHarada
 	dw CredMurakawa
 	dw CredFukui
+IF DEF(_ENGLISH)
 	dw CredClub
 	dw CredPAAD
+ENDC
 	assert_table_length NUM_CRED_STRINGS
 
 IF DEF(_ENGLISH)
@@ -75,35 +83,6 @@ IF DEF(_ENGLISH)
 INCLUDE "data/text/english/credits_descriptions.asm"
 ENDC
 INCLUDE "data/text/japanse/credits_pkmn_designers.asm"
-CredUSStaff:
-	db -7, "US VERSION STAFF@"
-CredUSCoord:
-	db -7, "US COORDINATION@"
-CredTilden:
-	db -5, "GAIL TILDEN@"
-CredKawakami:
-	db -6, "NAOKO KAWAKAMI@"
-CredHiNakamura:
-	db -6, "HIRO NAKAMURA@"
-CredGiese:
-	db -6, "WILLIAM GIESE@"
-CredOsborne:
-	db -5, "SARA OSBORNE@"
-CredTrans:
-	db -7, "TEXT TRANSLATION@"
-CredOgasawara:
-	db -6, "NOB OGASAWARA@"
-CredIwata:
-	db -5, "SATORU IWATA@"
-CredIzushi:
-	db -7, "TAKEHIRO IZUSHI@"
-CredHarada:
-	db -7, "TAKAHIRO HARADA@"
-CredMurakawa:
-	db -7, "TERUKI MURAKAWA@"
-CredFukui:
-	db -5, "KOHTA FUKUI@"
-CredClub:
-	db -9, "NCL SUPER MARIO CLUB@"
-CredPAAD:
-	db -5, "PAAD TESTING@"
+IF DEF(_ENGLISH)
+INCLUDE "data/text/english/credits_locations.asm"
+ENDC
