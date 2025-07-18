@@ -74,14 +74,7 @@ INCLUDE "data/text/japanse/credits_gamefreak.asm"
 IF DEF(_ENGLISH)
 INCLUDE "data/text/english/credits_descriptions.asm"
 ENDC
-CredTamada:
-	db -6, "SOUSUKE TAMADA@"
-CredSaOota:
-	db -5, "SATOSHI OOTA@"
-CredYoshikawa:
-	db -6, "RENA YOSHIKAWA@"
-CredToOota:
-	db -6, "TOMOMICHI OOTA@"
+INCLUDE "data/text/japanse/credits_pkmn_designers.asm"
 CredUSStaff:
 	db -7, "US VERSION STAFF@"
 CredUSCoord:
