@@ -78,11 +78,11 @@ ENDC
 IF DEF(_ENGLISH)
 INCLUDE "data/text/english/credits_version.asm"
 ENDC
-INCLUDE "data/text/japanse/credits_gamefreak.asm"
+INCLUDE "data/text/japanese/credits_gamefreak.asm"
 IF DEF(_ENGLISH)
 INCLUDE "data/text/english/credits_descriptions.asm"
 ENDC
-INCLUDE "data/text/japanse/credits_pkmn_designers.asm"
+INCLUDE "data/text/japanese/credits_pkmn_designers.asm"
 IF DEF(_ENGLISH)
 INCLUDE "data/text/english/credits_locations.asm"
 ENDC
