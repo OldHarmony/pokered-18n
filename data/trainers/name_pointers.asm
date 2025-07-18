@@ -52,24 +52,6 @@ TrainerNamePointers:
 	dw wTrainerName
 	assert_table_length NUM_TRAINERS
 
-.YoungsterName:     db "YOUNGSTER@"
-.BugCatcherName:    db "BUG CATCHER@"
-.LassName:          db "LASS@"
-.JrTrainerMName:    db "JR.TRAINER♂@"
-.JrTrainerFName:    db "JR.TRAINER♀@"
-.PokemaniacName:    db "POKéMANIAC@"
-.SuperNerdName:     db "SUPER NERD@"
-.BurglarName:       db "BURGLAR@"
-.EngineerName:      db "ENGINEER@"
-.UnusedJugglerName: db "JUGGLER@"
-.SwimmerName:       db "SWIMMER@"
-.BeautyName:        db "BEAUTY@"
-.RockerName:        db "ROCKER@"
-.JugglerName:       db "JUGGLER@"
-.BlackbeltName:     db "BLACKBELT@"
-.ProfOakName:       db "PROF.OAK@"
-.ChiefName:         db "CHIEF@"
-.ScientistName:     db "SCIENTIST@"
-.RocketName:        db "ROCKET@"
-.CooltrainerMName:  db "COOLTRAINER♂@"
-.CooltrainerFName:  db "COOLTRAINER♀@"
+IF DEF(_ENGLISH)
+INCLUDE "data/text/english/trainers_pointers.asm"
+ENDC
